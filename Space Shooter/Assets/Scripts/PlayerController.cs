@@ -6,9 +6,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
   private Rigidbody2D rd;
+  [SerializeField] private int life = 3;
   [SerializeField] private float velocity = 5f;
-
   [SerializeField] private GameObject shot;
+  [SerializeField] private Transform shotPosition;
+  [SerializeField] private GameObject explosion;
+
   void Start()
   {
     rd = GetComponent<Rigidbody2D>();
@@ -22,7 +25,18 @@ public class PlayerController : MonoBehaviour
 
     if (Input.GetButtonDown("Fire1"))
     {
-      Instantiate(shot, transform.position, Quaternion.identity);
+      Instantiate(shot, shotPosition.position, Quaternion.identity);
+    }
+  }
+
+  public void TakeDamage(int damagePoints)
+  {
+    life -= damagePoints;
+
+    if (life <= 0)
+    {
+      Destroy(gameObject);
+      Instantiate(explosion, transform.position, transform.rotation);
     }
   }
 }

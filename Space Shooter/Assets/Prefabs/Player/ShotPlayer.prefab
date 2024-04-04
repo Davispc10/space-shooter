@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8981703905703975910}
   - component: {fileID: 2049026305129945160}
   - component: {fileID: 5692110355232657695}
-  m_Layer: 0
+  - component: {fileID: 4896737176105843298}
+  m_Layer: 8
   m_Name: ShotPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +62,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2049026305129945160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,6 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 10
+  shotImpact: {fileID: 586360448772678678, guid: c928da863d66f064ab4041e949d156af, type: 3}
 --- !u!95 &5692110355232657695
 Animator:
   serializedVersion: 5
@@ -96,6 +98,41 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &4896737176105843298
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105978605776139753}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.16, y: 0.25}
+  m_Direction: 0
 --- !u!1 &5252194303319638733
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,7 +143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6658902833438953157}
   - component: {fileID: 7500893700429763632}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tiro_player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
